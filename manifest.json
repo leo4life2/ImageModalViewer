@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Image Modal Viewer",
+  "version": "1.0",
+  "description": "Open images in a modal instead of following links",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "http://www.1point3acres.com/*",
+    "https://www.1point3acres.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.1point3acres.com/*", "https://www.1point3acres.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
